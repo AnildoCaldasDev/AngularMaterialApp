@@ -30,12 +30,6 @@
   <app-subject-teste-tres></app-subject-teste-tres>
   <br />
 
-  <!-- <ul class="" *ngIf="(users$ | async)?.length">
-    <li class="" *ngFor="let user of users$ | async">
-      {{ user.id }} - {{ user.login }}
-    </li>
-  </ul> -->
-
   <mat-list *ngIf="(users$ | async)?.length">
     <mat-list-item *ngFor="let user of users$ | async">
       {{ user.id }} - {{ user.login }}
