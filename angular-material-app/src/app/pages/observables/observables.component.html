@@ -1,0 +1,50 @@
+<mat-card>
+  <p>Usando Observables com Angular!</p>
+
+  <button mat-raised-button (click)="chamarSemSubscribe()" color="primary">
+    Chamar com Async Observable
+  </button>
+
+  <button mat-raised-button (click)="chamarComSubscriber()" color="primary">
+    Chamar com Subscriber
+  </button>
+
+  <button mat-raised-button (click)="inscreverEmEvento()" color="secondary">
+    Inscrever-se
+  </button>
+
+  <button mat-raised-button (click)="desinscrever()" color="secondary">
+    Desinscrever-se
+  </button>
+
+  <br />
+  <hr />
+  <br />
+
+  <app-subject-teste-um></app-subject-teste-um>
+  <br />
+  <br />
+  <app-subject-teste-dois></app-subject-teste-dois>
+  <br />
+  <br />
+  <app-subject-teste-tres></app-subject-teste-tres>
+  <br />
+
+  <!-- <ul class="" *ngIf="(users$ | async)?.length">
+    <li class="" *ngFor="let user of users$ | async">
+      {{ user.id }} - {{ user.login }}
+    </li>
+  </ul> -->
+
+  <mat-list *ngIf="(users$ | async)?.length">
+    <mat-list-item *ngFor="let user of users$ | async">
+      {{ user.id }} - {{ user.login }}
+    </mat-list-item>
+  </mat-list>
+
+  <mat-list *ngIf="users?.length">
+    <mat-list-item *ngFor="let user of users">
+      {{ user.id }} - {{ user.login }}
+    </mat-list-item>
+  </mat-list>
+</mat-card>
