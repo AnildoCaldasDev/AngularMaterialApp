@@ -11,7 +11,7 @@ export class SubjectTesteService {
 
 
   constructor() {
-    this.adicionarValor(0);
+    this.subjectTesteValor.next(0);
   }
 
   public subjectTesteValor = new Subject<number>();

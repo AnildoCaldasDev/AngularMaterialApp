@@ -5,6 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 // import {
 //   MatAutocompleteModule,
@@ -28,6 +29,9 @@ import { MatTableModule } from "@angular/material/table";
 import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
 import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { FramePageComponent } from "./pages/master/frame.page.component";
 import { NavbarComponent } from "./components/shared/navbar/navbar.component";
@@ -38,6 +42,7 @@ import { ObservablesComponent } from './pages/observables/observables.component'
 import { SubjectTesteUmComponent } from './pages/observables/subject-teste-um/subject-teste-um.component';
 import { SubjectTesteDoisComponent } from './pages/observables/subject-teste-dois/subject-teste-dois.component';
 import { SubjectTesteTresComponent } from './pages/observables/subject-teste-tres/subject-teste-tres.component';
+import { UserLocationManagerComponent } from './components/shared/user-location-manager/user-location-manager.component';
 
 @NgModule({
   declarations: [
@@ -52,9 +57,12 @@ import { SubjectTesteTresComponent } from './pages/observables/subject-teste-tre
     SubjectTesteUmComponent,
     SubjectTesteDoisComponent,
     SubjectTesteTresComponent,
+    UserLocationManagerComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
@@ -68,6 +76,9 @@ import { SubjectTesteTresComponent } from './pages/observables/subject-teste-tre
     MatIconModule,
     MatCardModule,
     MatListModule,
+    MatSelectModule,
+    MatGridListModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],
