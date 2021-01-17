@@ -32,6 +32,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatInputModule } from '@angular/material/input';
 
 import { FramePageComponent } from "./pages/master/frame.page.component";
 import { NavbarComponent } from "./components/shared/navbar/navbar.component";
@@ -43,6 +44,8 @@ import { SubjectTesteUmComponent } from './pages/observables/subject-teste-um/su
 import { SubjectTesteDoisComponent } from './pages/observables/subject-teste-dois/subject-teste-dois.component';
 import { SubjectTesteTresComponent } from './pages/observables/subject-teste-tres/subject-teste-tres.component';
 import { UserLocationManagerComponent } from './components/shared/user-location-manager/user-location-manager.component';
+import { UserCountryLocationComponent } from './pages/usercountrylocation/usercountrylocation.component';
+import { UsercountrylocationdetailComponent } from './pages/usercountrylocation/usercountrylocationdetail/usercountrylocationdetail.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +61,8 @@ import { UserLocationManagerComponent } from './components/shared/user-location-
     SubjectTesteDoisComponent,
     SubjectTesteTresComponent,
     UserLocationManagerComponent,
+    UserCountryLocationComponent,
+    UsercountrylocationdetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +83,8 @@ import { UserLocationManagerComponent } from './components/shared/user-location-
     MatListModule,
     MatSelectModule,
     MatGridListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],

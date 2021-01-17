@@ -1,9 +1,17 @@
 <div>
   <mat-toolbar color="primary">
-    <button mat-button routerLink="/">Home</button>
-    <button mat-button routerLink="/matslider">Slider</button>
-    <button mat-button routerLink="/tables">Tables</button>
-    <button mat-button routerLink="/observables">Observables</button>
-    <button mat-button routerLink="/forms">Forms</button>
+    <mat-toolbar-row>
+      <mat-icon>menu</mat-icon>
+      <button mat-button routerLink="/">Home</button>
+      <button mat-button routerLink="/userlocation">User Location</button>
+      <button mat-button routerLink="/matslider">Slider</button>
+      <button mat-button routerLink="/tables">Tables</button>
+      <button mat-button routerLink="/observables">Observables</button>
+      <button mat-button routerLink="/forms">Forms</button>
+      <span class="example-spacer"></span>
+      <button class="spanEspacoPais" mat-icon-button>{{ countryLabel }}</button>
+      <button class="spanEspacoPais" mat-icon-button>{{ stateLabel }}</button>
+      <button class="spanEspacoCidade" mat-icon-button>{{ cityLabel }}</button>
+    </mat-toolbar-row>
   </mat-toolbar>
 </div>

@@ -1,25 +1,10 @@
-// interface Country {
-//   id: number;
-//   label: string;
-//   states: State[];
-// }
-
-// interface State {
-//   id: number;
-//   label: string;
-//   cityes: City[];
-// }
-
-// interface City {
-//   id: number;
-//   label: string;
-// }
-
-
 export class Country {
   id: number;
   label: string;
   states: State[];
+  countryCode: string;
+  stateSelected?: State;
+  citySelected?: City;
 }
 
 export class State {
@@ -31,4 +16,13 @@ export class State {
 export class City {
   id: number;
   label: string;
+}
+
+export class CountryDetail {
+  postalCode?: string;
+  countryName?: string;
+  countryCode?: string;
+  countryRegion?: string;
+  countryFlag?: string;
+  countryCapital?: string;
 }

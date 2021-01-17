@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-subtitle>
+      <app-user-location-manager></app-user-location-manager>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <app-usercountrylocationdetail
+      [countryDetailInput]="countryDetail"
+      *ngIf="showCountryDetail"
+    ></app-usercountrylocationdetail>
+  </mat-card-content>
+</mat-card>
