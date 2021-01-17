@@ -1,66 +1,77 @@
 <div class="row">
   <div class="example-container">
-    <!-- <mat-form-field appearance="fill">
-      <mat-label>Enter your email</mat-label>
-      <input
-        matInput
-        placeholder="pat@example.com"
-        [formControl]="email"
-        required
-      />
-      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
-    </mat-form-field> -->
+    <form class="">
+      <table class="example-full-td" cellspacing="0">
+        <tr>
+          <td>
+            <div class="example-form">
+              <mat-form-field class="firstElementFormMargin example-full-width">
+                <mat-label><strong>Country Code: </strong></mat-label>
+                <input
+                  matInput
+                  disabled
+                  value="{{ countryDetailInput?.countryCode }}"
+                />
+              </mat-form-field>
 
-    <form class="example-form">
-      <mat-form-field class="firstElementFormMargin example-full-width">
-        <mat-label><strong>Country Code: </strong></mat-label>
-        <input
-          matInput
-          disabled
-          value="{{ countryDetailInput?.countryCode }}"
-        />
-      </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label><strong>Country Name: </strong></mat-label>
+                <input
+                  matInput
+                  disabled
+                  value="{{ countryDetailInput?.countryName }}"
+                />
+              </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <mat-label><strong>Country Name: </strong></mat-label>
-        <input
-          matInput
-          disabled
-          value="{{ countryDetailInput?.countryName }}"
-        />
-      </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label><strong>Country Capital: </strong></mat-label>
+                <input
+                  matInput
+                  disabled
+                  value="{{ countryDetailInput?.countryCapital }}"
+                />
+              </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <mat-label><strong>Country Capital: </strong></mat-label>
-        <input
-          matInput
-          disabled
-          value="{{ countryDetailInput?.countryCapital }}"
-        />
-      </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label><strong>Postal Code: </strong></mat-label>
+                <input
+                  matInput
+                  disabled
+                  value="{{ countryDetailInput?.postalCode }}"
+                />
+              </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <mat-label><strong>Postal Code: </strong></mat-label>
-        <input matInput disabled value="{{ countryDetailInput?.postalCode }}" />
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width">
-        <mat-label><strong>Region: </strong></mat-label>
-        <input
-          matInput
-          disabled
-          value="{{ countryDetailInput?.countryRegion }}"
-        />
-      </mat-form-field>
-      <mat-label class="imageSize"><strong>Country Flag: </strong></mat-label>
-      <div>
+              <mat-form-field class="example-full-width">
+                <mat-label><strong>Region: </strong></mat-label>
+                <input
+                  matInput
+                  disabled
+                  value="{{ countryDetailInput?.countryRegion }}"
+                />
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="divFlagCountry">
+              <img
+                class="imageSize"
+                mat-card-image
+                [src]="countryDetailInput?.countryFlag"
+                alt="Country Flag"
+              />
+            </div>
+          </td>
+        </tr>
+      </table>
+      <!-- <mat-label class="imageSize"><strong>Country Flag: </strong></mat-label> -->
+      <!-- <div class="divFlagCountry">
         <img
           class="imageSize"
           mat-card-image
           [src]="countryDetailInput?.countryFlag"
           alt="Country Flag"
         />
-      </div>
+      </div> -->
 
       <!-- <table class="example-full-width" cellspacing="0">
         <tr>

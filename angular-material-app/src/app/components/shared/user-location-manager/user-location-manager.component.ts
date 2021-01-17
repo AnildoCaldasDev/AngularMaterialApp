@@ -4,7 +4,7 @@ import { UserGitHubModel } from 'src/app/services/models/users.github.model';
 import { ObservablesService } from 'src/app/services/observables.service';
 import { TesteUserSubscriptionService } from 'src/app/services/teste-user-subscription-service';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { City, Country, State } from 'src/app/services/models/user-location-manager.model';
+import { City, Country, CountryDetail, State } from 'src/app/services/models/user-location-manager.model';
 import { UserLocationManagerService } from 'src/app/services/user-location-manager.service';
 import { CustomErrorStateMatcher } from 'src/app/core/shared/error-state-matcher';
 
@@ -43,6 +43,7 @@ export class UserLocationManagerComponent implements OnInit, OnDestroy {
   selectedStateId: number;
   selectedCityId: number;
   countryMenu: Country;
+  countryDetail: CountryDetail = {};
   private subscriptions: Subscription[] = [];
 
   constructor(private userLocationManagerService: UserLocationManagerService) { }
@@ -63,7 +64,8 @@ export class UserLocationManagerComponent implements OnInit, OnDestroy {
     this.states = country.states;
     this.countryMenu = country;
     this.resetLocationLevel2();
-    this.userLocationManagerService.emit(this.countryMenu);
+    this.loadCountryByCode(country.countryCode);
+    //this.userLocationManagerService.emit(this.countryMenu);
   }
 
   changeState(stateId: number) {
@@ -100,6 +102,28 @@ export class UserLocationManagerComponent implements OnInit, OnDestroy {
       this.subscriptions.forEach(x => x.unsubscribe());
       console.log("SubjectTesteDOISComponent desinscrito");
     }
+  }
+
+  loadCountryByCode(code: string) {
+    this.userLocationManagerService.getCountryByCode(code).subscribe(
+      (data: any) => {
+        if (data) {
+          this.countryDetail.countryCode = data.alpha3Code;
+          this.countryDetail.countryName = data.name;
+          this.countryDetail.countryRegion = data.region;
+          this.countryDetail.postalCode = data.area;
+          this.countryDetail.countryFlag = data.flag;
+          this.countryDetail.countryCapital = data.capital;
+          this.countryMenu.countryDetail = this.countryDetail;
+          this.userLocationManagerService.emit(this.countryMenu);
+        } else {
+          this.userLocationManagerService.emit(this.countryMenu);
+        }
+      },
+      (error: any) => {
+        console.log('Erro ao buscar Países' + error);
+        this.userLocationManagerService.emit(this.countryMenu);
+      });
   }
 
 }

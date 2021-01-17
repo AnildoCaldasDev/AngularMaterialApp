@@ -12,6 +12,13 @@
       <button class="spanEspacoPais" mat-icon-button>{{ countryLabel }}</button>
       <button class="spanEspacoPais" mat-icon-button>{{ stateLabel }}</button>
       <button class="spanEspacoCidade" mat-icon-button>{{ cityLabel }}</button>
+      <img
+        *ngIf="countryFlag"
+        class="countryFlagMenuIcon"
+        mat-card-sm-image
+        src="{{ countryFlag }}"
+        alt="image icon"
+      />
     </mat-toolbar-row>
   </mat-toolbar>
 </div>

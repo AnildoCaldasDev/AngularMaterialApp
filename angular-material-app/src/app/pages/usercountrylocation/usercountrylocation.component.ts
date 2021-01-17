@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Country, CountryDetail } from 'src/app/services/models/user-location-manager.model';
 import { UserLocationManagerService } from 'src/app/services/user-location-manager.service';
@@ -8,10 +8,10 @@ import { UserLocationManagerService } from 'src/app/services/user-location-manag
   templateUrl: './usercountrylocation.component.html',
   styleUrls: ['./usercountrylocation.component.css']
 })
-export class UserCountryLocationComponent implements OnInit {
+export class UserCountryLocationComponent implements OnInit, OnDestroy {
 
   public showCountryDetail: boolean = false;
-  countryDetail: CountryDetail = {};
+  public countryDetail?: CountryDetail;
 
   private subscriptions: Subscription[] = [];
 
@@ -21,48 +21,16 @@ export class UserCountryLocationComponent implements OnInit {
 
     this.subscriptions.push(this.userLocationManagerService.subscribe((data: Country) => {
       if (data) {
-        this.loadCountryByCode(data.countryCode);
+        //this.loadCountryByCode(data.countryCode);
+        this.countryDetail = data?.countryDetail;
       }
     }));
-
-    // this.subscriptions.push(this.userLocationManagerService.getCountryByCode().subscribe(
-    //   (data: any) => {
-    //     console.log('data', data);
-    //     if (data) {
-    //       this.countryDetail.countryCode = data.alpha3Code;
-    //       this.countryDetail.countryName = data.name;
-    //       this.countryDetail.countryRegion = data.region;
-    //       this.countryDetail.postalCode = data.area;
-    //       this.countryDetail.countryFlag = data.flag;
-    //       this.countryDetail.countryCapital = data.capital;
-    //       this.showCountryDetail = true;
-    //     } else {
-    //       this.showCountryDetail = false;
-    //     }
-    //   },
-    //   (error: any) => {
-    //     console.log('Erro ao buscar Países' + error);
-    //   }));
   }
 
-  loadCountryByCode(code: string) {
-    this.userLocationManagerService.getCountryByCode(code).subscribe(
-      (data: any) => {
-        console.log('data', data);
-        if (data) {
-          this.countryDetail.countryCode = data.alpha3Code;
-          this.countryDetail.countryName = data.name;
-          this.countryDetail.countryRegion = data.region;
-          this.countryDetail.postalCode = data.area;
-          this.countryDetail.countryFlag = data.flag;
-          this.countryDetail.countryCapital = data.capital;
-          this.showCountryDetail = true;
-        } else {
-          this.showCountryDetail = false;
-        }
-      },
-      (error: any) => {
-        console.log('Erro ao buscar Países' + error);
-      });
+  ngOnDestroy(): void {
+    if (this.subscriptions && this.subscriptions.length > 0) {
+      this.subscriptions.forEach(x => x.unsubscribe());
+      console.log("SubjectTesteDOISComponent desinscrito");
+    }
   }
 }

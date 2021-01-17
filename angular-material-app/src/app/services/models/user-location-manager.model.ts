@@ -5,6 +5,7 @@ export class Country {
   countryCode: string;
   stateSelected?: State;
   citySelected?: City;
+  countryDetail?: CountryDetail
 }
 
 export class State {

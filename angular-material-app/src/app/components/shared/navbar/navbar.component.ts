@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   public countryLabel: string;
   public stateLabel: string;
   public cityLabel: string;
+  public countryFlag: string;
 
   private subscriptions: Subscription[] = [];
 
@@ -25,6 +26,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
           this.countryLabel = country.label;
           this.stateLabel = country.stateSelected?.label;
           this.cityLabel = country.citySelected?.label;
+          this.countryFlag = country.countryDetail?.countryFlag;
         }
       }));
   }
