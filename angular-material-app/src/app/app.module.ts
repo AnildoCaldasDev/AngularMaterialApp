@@ -46,6 +46,7 @@ import { SubjectTesteTresComponent } from './pages/observables/subject-teste-tre
 import { UserLocationManagerComponent } from './components/shared/user-location-manager/user-location-manager.component';
 import { UserCountryLocationComponent } from './pages/usercountrylocation/usercountrylocation.component';
 import { UsercountrylocationdetailComponent } from './pages/usercountrylocation/usercountrylocationdetail/usercountrylocationdetail.component';
+import { ObservabletutorialComponent } from './pages/observabletutorial/observabletutorial.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { UsercountrylocationdetailComponent } from './pages/usercountrylocation/
     UserLocationManagerComponent,
     UserCountryLocationComponent,
     UsercountrylocationdetailComponent,
+    ObservabletutorialComponent,
   ],
   imports: [
     BrowserModule,
