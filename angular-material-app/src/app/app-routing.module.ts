@@ -4,6 +4,7 @@ import { FormsComponent } from "./pages/forms/forms.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { FramePageComponent } from "./pages/master/frame.page.component";
 import { ObservablesComponent } from "./pages/observables/observables.component";
+import { ObservabletutorialComponent } from "./pages/observabletutorial/observabletutorial.component";
 import { SliderComponent } from "./pages/slider/slider.component";
 import { TableComponent } from "./pages/table/table.component";
 import { UserCountryLocationComponent } from "./pages/usercountrylocation/usercountrylocation.component";
@@ -19,6 +20,8 @@ const routes: Routes = [
       { path: "forms", component: FormsComponent },
       { path: "observables", component: ObservablesComponent },
       { path: "userlocation", component: UserCountryLocationComponent },
+      { path: "observablestutorial", component: ObservabletutorialComponent },
+
 
 
       // { path: 'cart', component: CartPageComponent, canActivate: [AuthService] },

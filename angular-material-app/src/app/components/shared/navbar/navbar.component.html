@@ -6,7 +6,14 @@
       <button mat-button routerLink="/userlocation">User Location</button>
       <button mat-button routerLink="/matslider">Slider</button>
       <button mat-button routerLink="/tables">Tables</button>
-      <button mat-button routerLink="/observables">Observables</button>
+      <button mat-button [matMenuTriggerFor]="menuobservable">Tutoriais</button>
+      <mat-menu #menuobservable="matMenu">
+        <button routerLink="/observables" mat-menu-item>Observables</button>
+        <button routerLink="/observablestutorial" mat-menu-item>
+          Observables Tutorial
+        </button>
+      </mat-menu>
+
       <button mat-button routerLink="/forms">Forms</button>
       <span class="example-spacer"></span>
       <button class="spanEspacoPais" mat-icon-button>{{ countryLabel }}</button>

@@ -1,1 +1,13 @@
-<p>observabletutorial works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-subtitle>
+      <app-user-location-manager></app-user-location-manager>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Tutorial de Observables</p>
+    <button (click)="dispararEvento()">Disparar contador</button>
+    <br />
+    <p><strong>Valor Observable: </strong>{{ valorInput }}</p>
+  </mat-card-content>
+</mat-card>
