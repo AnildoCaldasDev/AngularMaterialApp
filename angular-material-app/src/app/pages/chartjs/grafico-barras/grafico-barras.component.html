@@ -1,0 +1,143 @@
+<mat-card>
+  <mat-card-content>
+    <div class="row">
+      <div class="estilhoDivGrafico">
+        <canvas style="width: 90%; height: 300px" id="bar"></canvas>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="estilhoDivGrafico">
+        <section class="example-section">
+          <mat-checkbox
+            [checked]="true"
+            (change)="changeSeries($event)"
+            *ngFor="let serie of labelsSeries"
+            class="estiloDivFiltros"
+            [id]="serie"
+            >{{ serie }}
+          </mat-checkbox>
+        </section>
+      </div>
+    </div>
+    <div class="estiloDivFiltros">
+      <mat-form-field class="marginleftselect">
+        <mat-label>Selecione...</mat-label>
+        <mat-select
+          [formControl]="formMatFilterSelect"
+          [(ngModel)]="lessThanOrGreaterThan"
+        >
+          <mat-option value="lessThen">Less Then</mat-option>
+          <mat-option value="greaterThen">Greater Then</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <input
+        [(ngModel)]="filterLimit"
+        placeholder="Filter Limit"
+        style="width: 150px; height: 30px"
+      />
+      <br />
+      <button
+        mat-raised-button
+        (click)="applyFilter(filterLimit)"
+        color="primary"
+      >
+        Apply Filter
+      </button>
+    </div>
+    <br />
+    <div class="estiloDivFiltros">
+      <div style="margin-left: auto">
+        <select [(ngModel)]="from" style="width: 150px; height: 30px">
+          <option *ngFor="let m of months" [value]="m.value">
+            {{ m.month }}
+          </option>
+        </select>
+        &nbsp;&nbsp;
+
+        <select [(ngModel)]="toMonth" style="width: 150px; height: 30px">
+          <option *ngFor="let m1 of months" [value]="m1.value">
+            {{ m1.month }}
+          </option>
+        </select>
+      </div>
+
+      <button class="button" (click)="applyDateFilter()">
+        Apply Date Filter
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!--
+<mat-card>
+  <mat-card-content>
+    <div class="row">
+      <div class="estilhoDivGrafico">
+        <canvas style="width: 90%; height: 300px" id="bar"></canvas>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="estilhoDivGrafico">
+        <section class="example-section">
+          <mat-checkbox
+            [checked]="true"
+            (change)="changeSeries($event)"
+            *ngFor="let serie of labelsSeries"
+            class="estiloDivFiltros"
+            [id]="serie"
+            >{{ serie }}
+          </mat-checkbox>
+        </section>
+      </div>
+    </div>
+    <div class="estiloDivFiltros">
+      <mat-form-field class="marginleftselect">
+        <mat-label>Selecione...</mat-label>
+        <mat-select
+          [formControl]="formMatFilterSelect"
+          [(ngModel)]="lessThanOrGreaterThan"
+        >
+          <mat-option value="lessThen">Less Then</mat-option>
+          <mat-option value="greaterThen">Greater Then</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <input
+        [(ngModel)]="filterLimit"
+        placeholder="Filter Limit"
+        style="width: 150px; height: 30px"
+      />
+      <br />
+
+      <button
+        mat-raised-button
+        (click)="applyFilter(filterLimit)"
+        color="primary"
+      >
+        Apply Filter
+      </button>
+    </div>
+    <br />
+    <div class="estiloDivFiltros">
+      <div style="margin-left: auto">
+        <select [(ngModel)]="from" style="width: 150px; height: 30px">
+          <option *ngFor="let m of seriesFilter" [value]="m.value">
+            {{ m.month }}
+          </option>
+        </select>
+        &nbsp;&nbsp;
+
+        <select [(ngModel)]="toMonth" style="width: 150px; height: 30px">
+          <option *ngFor="let m1 of seriesFilter" [value]="m1.value">
+            {{ m1.month }}
+          </option>
+        </select>
+      </div>
+
+      <button class="button" (click)="applyDateFilter()">
+        Apply Date Filter
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card> -->

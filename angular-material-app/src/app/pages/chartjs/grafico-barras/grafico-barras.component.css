@@ -1,0 +1,18 @@
+.estilhoDivGrafico{
+  display: flex;
+  padding: 30px;
+}
+
+.estiloDivFiltros{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}

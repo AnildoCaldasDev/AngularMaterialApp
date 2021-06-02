@@ -19,3 +19,8 @@ table {
 .alinhaDireita {
   float: right;
 }
+
+
+th.mat-sort-header-sorted {
+  color: rgb(218, 8, 8);
+}

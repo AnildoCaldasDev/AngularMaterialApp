@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { CommonModule } from '@angular/common';
+import { CommonModule, PercentPipe } from '@angular/common';
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -33,6 +33,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { FramePageComponent } from "./pages/master/frame.page.component";
 import { NavbarComponent } from "./components/shared/navbar/navbar.component";
@@ -47,6 +48,14 @@ import { UserLocationManagerComponent } from './components/shared/user-location-
 import { UserCountryLocationComponent } from './pages/usercountrylocation/usercountrylocation.component';
 import { UsercountrylocationdetailComponent } from './pages/usercountrylocation/usercountrylocationdetail/usercountrylocationdetail.component';
 import { ObservabletutorialComponent } from './pages/observabletutorial/observabletutorial.component';
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+import { MatSortModule } from "@angular/material/sort";
+import { GraficoBarrasComponent } from './pages/chartjs/grafico-barras/grafico-barras.component';
+import { GraficoTortaComponent } from './pages/chartjs/grafico-torta/grafico-torta.component';
+
+registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   declarations: [
@@ -65,6 +74,8 @@ import { ObservabletutorialComponent } from './pages/observabletutorial/observab
     UserCountryLocationComponent,
     UsercountrylocationdetailComponent,
     ObservabletutorialComponent,
+    GraficoBarrasComponent,
+    GraficoTortaComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,9 +97,13 @@ import { ObservabletutorialComponent } from './pages/observabletutorial/observab
     MatSelectModule,
     MatGridListModule,
     MatMenuModule,
-    MatInputModule
+    MatInputModule,
+    MatSortModule,
+    MatCheckboxModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

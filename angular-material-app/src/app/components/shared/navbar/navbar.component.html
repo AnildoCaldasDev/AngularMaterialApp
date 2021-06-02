@@ -8,13 +8,21 @@
       <button mat-button routerLink="/tables">Tables</button>
       <button mat-button [matMenuTriggerFor]="menuobservable">Tutoriais</button>
       <mat-menu #menuobservable="matMenu">
-        <button routerLink="/observables" mat-menu-item>Observables</button>
-        <button routerLink="/observablestutorial" mat-menu-item>
+        <button routerLink="observables" mat-menu-item>Observables</button>
+        <button routerLink="observablestutorial" mat-menu-item>
           Observables Tutorial
         </button>
       </mat-menu>
-
       <button mat-button routerLink="/forms">Forms</button>
+      <button mat-button [matMenuTriggerFor]="menuchartjs">Chart Js</button>
+      <mat-menu #menuchartjs="matMenu">
+        <button routerLink="/chartjs/graficobarras" mat-menu-item>
+          Gráfico Barras
+        </button>
+        <button routerLink="/chartjs/graficotorta" mat-menu-item>
+          Gráfico Torta
+        </button>
+      </mat-menu>
       <span class="example-spacer"></span>
       <button class="spanEspacoPais" mat-icon-button>{{ countryLabel }}</button>
       <button class="spanEspacoPais" mat-icon-button>{{ stateLabel }}</button>

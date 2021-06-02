@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { GraficoBarrasComponent } from "./pages/chartjs/grafico-barras/grafico-barras.component";
+import { GraficoTortaComponent } from "./pages/chartjs/grafico-torta/grafico-torta.component";
 import { FormsComponent } from "./pages/forms/forms.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { FramePageComponent } from "./pages/master/frame.page.component";
@@ -21,9 +23,8 @@ const routes: Routes = [
       { path: "observables", component: ObservablesComponent },
       { path: "userlocation", component: UserCountryLocationComponent },
       { path: "observablestutorial", component: ObservabletutorialComponent },
-
-
-
+      { path: "chartjs/graficobarras", component: GraficoBarrasComponent },
+      { path: "chartjs/graficotorta", component: GraficoTortaComponent },
       // { path: 'cart', component: CartPageComponent, canActivate: [AuthService] },
       // { path: 'checkout', component: CheckoutPageComponent, canActivate: [AuthService] }
     ],
